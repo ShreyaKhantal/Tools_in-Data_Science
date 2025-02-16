@@ -67,7 +67,6 @@ def B7(image_path, output_path, resize=None):
 #     with open(audio_path, 'rb') as audio_file:
 #         return openai.Audio.transcribe("whisper-1", audio_file)
 
-# B9: Markdown to HTML Conversion
 def B9(md_path, output_path):
     import markdown
     if not B12(md_path):

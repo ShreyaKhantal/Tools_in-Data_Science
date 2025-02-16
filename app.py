@@ -22,7 +22,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from tasksA import *
 from tasksB import *
 import requests
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
 import re
 import httpx
@@ -40,31 +40,8 @@ app.add_middleware(
 
 
 app = FastAPI()
-# load_dotenv()
+load_dotenv()
 
-# @app.get('/ask')
-# def ask(prompt: str):
-#     """ Prompt Gemini to generate a response based on the given prompt. """
-#     gemini_api_key = os.getenv('gemini_api_key')
-#     if not gemini_api_key:
-#         return JSONResponse(content={"error": "GEMINI_API_KEY not set"}, status_code=500)
-
-#     # Read the contents of tasks.py
-#     with open('tasks.py', 'r') as file:
-#         tasks_content = file.read()
-
-#     # Prepare the request data
-#     data = {
-#         "contents": [{
-#             "parts": [
-#                 {"text": f"Find the task function from here for the below prompt:\n{tasks_content}\n\nPrompt: {prompt}\n\n respond with the function_name and function_parameters with parameters in json format"},
-#             ]
-#         }]
-#     }
-
-#     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_api_key}"
-#     headers = {
-#         "Content-Type": "application/json"
 
 @app.get("/ask")
 def ask(prompt: str):
@@ -487,4 +464,4 @@ async def read_file(path: str = Query(..., description="File path to read")):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

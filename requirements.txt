@@ -1,16 +1,3 @@
-# fastapi
-# uvicorn
-# pillow
-# faker
-# openai==0.28.0
-# requests
-# httpx
-# numpy
-# python-dateutil
-# pytesseract
-# python-dotenv
-# scipy
-
 fastapi
 uvicorn
 requests
@@ -22,3 +9,5 @@ python-dotenv
 httpx
 markdown
 duckdb
+Pillow
+faker
